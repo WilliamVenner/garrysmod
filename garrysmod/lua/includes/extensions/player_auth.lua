@@ -51,7 +51,11 @@ if not SERVER then return end
     Desc: Sets the player's usergroup. ( Serverside Only )
 -----------------------------------------------------------]]
 function meta:SetUserGroup(name)
+    local changed = self:GetNWString("UserGroup") ~= name
+
     self:SetNWString("UserGroup", name)
+
+    if changed then hook.Run("OnUserGroupSet", self, name) end
 end
 
 
