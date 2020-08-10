@@ -35,6 +35,8 @@ function ToolObj:MakeGhostEntity( model, pos, angle )
 		return
 	end
 
+	self.GhostEntity.IsGhostEntity = true
+
 	self.GhostEntity:SetModel( model )
 	self.GhostEntity:SetPos( pos )
 	self.GhostEntity:SetAngles( angle )
